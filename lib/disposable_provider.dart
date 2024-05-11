@@ -8,10 +8,9 @@ abstract class DisposableProvider with ChangeNotifier {
 class AppProviders {
   static final List<DisposableProvider> _disposableProviderList = [];
 
-  static void addProvidersToDispose({required DisposableProvider provider}) {
-    _disposableProviderList.add(provider);
+  static void addProvidersToDispose({required List<DisposableProvider> list}) {
+    _disposableProviderList.addAll(list);
   }
-
 
   static List<DisposableProvider> _getDisposableProviders(BuildContext context) {
     return _disposableProviderList;
